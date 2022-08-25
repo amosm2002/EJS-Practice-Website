@@ -1,0 +1,14 @@
+  <!--  this is how you include another ejs file into a different ejs file start < % - end - % > and then inbetween you write the file name -->
+<%- include("partials/header"); -%>
+  <h1> Home </h1>
+  <p> <%= startingContent%> </p>
+
+<%  posts.forEach(function(post){ %>
+  <!-- < % = is used for declareing the html -->
+  <h1><%=post.title%></h1>
+    <p><%=post.content.substring(0, 100) + "..."%>
+    <a href="/posts/<%=post.title%>">Ream More</a>
+    </p>
+  <%});%>
+
+<%- include("partials/footer"); -%>
